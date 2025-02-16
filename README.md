@@ -1,6 +1,6 @@
 # Stock Price Lookup
 
-This project is a Python script that allows you to look up historical stock prices for a specified ticker and date range. It retrieves daily stock data (including opening and closing prices) and computes the daily gain/loss using the formula `(Closing Price / Opening Price - 1)`. The results are then saved to an Excel file for further analysis.
+This project is a Python script that allows you to look up historical stock prices for a specified ticker and date range. It retrieves daily stock data (including opening and closing prices) and computes the daily gain/loss using the formula `(Closing Price / Opening Price - 1)`. The results are then saved to an Excel file for further analysis, complete with interactive charts.
 
 ## Features
 
@@ -13,6 +13,9 @@ This project is a Python script that allows you to look up historical stock pric
   - Opening Price
   - Closing Price
   - gain/loss
+- **Excel Charts:** Automatically create and add charts in a separate Excel sheet:
+  - **Daily Percentage Change:** A line chart displaying the daily gain/loss percentage.
+  - **Daily Closing Price:** A line chart showing the daily closing prices.
 - **Timezone Handling:** Automatically removes timezone information from datetime values to ensure compatibility with Excel.
 - **Interactive Confirmation:** Displays the fetched stock symbol and company name for user confirmation before processing.
 
@@ -64,7 +67,11 @@ When prompted, enter:
 - The start date (in `YYYY-MM-DD` format).
 - The end date (in `YYYY-MM-DD` format).
 
-The script will display the stock symbol and company name for confirmation. Once confirmed, it will fetch the data, compute the gain/loss, and export the results to an Excel file (e.g., `AAPL_stock_data.xlsx`).
+The script will display the stock symbol and company name for confirmation. Once confirmed, it will:
+- Fetch the historical data.
+- Compute the gain/loss.
+- Export the results to an Excel file (e.g., `AAPL_stock_data.xlsx`).
+- Add two charts in a new sheet named **Chart**: one for daily percentage change and another for daily closing prices.
 
 ### Example Interaction
 
@@ -78,6 +85,7 @@ Stock Name: Apple Inc.
 Is this correct? (Y/N): Y
 
 Data has been saved to 'AAPL_stock_data.xlsx'.
+Charts have been added to the 'AAPL_stock_data.xlsx' in sheet 'Chart'.
 ```
 
 ## Contributing
@@ -93,5 +101,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 This script uses data provided by Yahoo Finance via the [yfinance](https://pypi.org/project/yfinance/) library. The data is provided "as is" without any warranty. Always verify financial data with official sources before making any investment decisions.
 
 ---
-
-Feel free to modify this `README.md` as needed to fit your project's specifics.
